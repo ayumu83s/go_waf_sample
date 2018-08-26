@@ -9,22 +9,22 @@ import (
 	"github.com/ayumu83s/di_sample/infra/memcache"
 )
 
-type Repository interface {
+type UserRepository interface {
 	NewUser() repository.User
 	NewUserByCache() repository.User
 }
 
-type repositoryImpl struct {
+type userRepositoryImpl struct {
 }
 
-func NewRepository() Repository {
-	return &repositoryImpl{}
+func NewUserRepository() UserRepository {
+	return &userRepositoryImpl{}
 }
 
-func (r *repositoryImpl) NewUser() repository.User {
+func (r *userRepositoryImpl) NewUser() repository.User {
 	return &database.User{}
 }
 
-func (r *repositoryImpl) NewUserByCache() repository.User {
+func (r *userRepositoryImpl) NewUserByCache() repository.User {
 	return &memcache.User{}
 }

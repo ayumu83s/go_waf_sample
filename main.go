@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	repo := registory.NewRepository()
+	repo := registory.NewUserRepository()
 	controller := controller.NewUser(repo)
 	controller.Get(1)
 }
