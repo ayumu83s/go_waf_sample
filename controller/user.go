@@ -1,8 +1,8 @@
 package controller
 
 import (
+	"github.com/ayumu83s/di_sample/domain/service"
 	"github.com/ayumu83s/di_sample/registory"
-	"github.com/ayumu83s/di_sample/service"
 )
 
 type User struct {
@@ -15,6 +15,6 @@ func NewUser(repo registory.Repository) *User {
 
 func (u *User) Get(id int) {
 	repo := u.repo.NewUser()
-	userService := service.NewUser(repo)
+	userService := service.NewUserService(repo)
 	userService.Get(id)
 }
