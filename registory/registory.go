@@ -6,10 +6,12 @@ package registory
 import (
 	"github.com/ayumu83s/di_sample/domain/repository"
 	"github.com/ayumu83s/di_sample/infra/database"
+	"github.com/ayumu83s/di_sample/infra/memcache"
 )
 
 type Repository interface {
 	NewUser() repository.User
+	NewUserByCache() repository.User
 }
 
 type repositoryImpl struct {
@@ -21,4 +23,8 @@ func NewRepository() Repository {
 
 func (r *repositoryImpl) NewUser() repository.User {
 	return &database.User{}
+}
+
+func (r *repositoryImpl) NewUserByCache() repository.User {
+	return &memcache.User{}
 }

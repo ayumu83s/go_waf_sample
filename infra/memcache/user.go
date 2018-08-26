@@ -1,4 +1,4 @@
-package database
+package memcache
 
 import (
 	"fmt"
@@ -8,5 +8,5 @@ type User struct {
 }
 
 func (u *User) Get(id int) {
-	fmt.Println("database/Get()")
+	fmt.Println("memcache/Get()")
 }

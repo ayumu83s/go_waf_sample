@@ -14,7 +14,8 @@ func NewUser(repo registory.Repository) *User {
 }
 
 func (u *User) Get(id int) {
-	repo := u.repo.NewUser()
+	//repo := u.repo.NewUser()
+	repo := u.repo.NewUserByCache()
 	userService := service.NewUserService(repo)
 	userService.Get(id)
 }
