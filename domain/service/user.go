@@ -1,6 +1,10 @@
 package service
 
-import "github.com/ayumu83s/di_sample/domain/repository"
+import (
+	"fmt"
+
+	"github.com/ayumu83s/di_sample/domain/repository"
+)
 
 type UserService struct {
 	userRepo repository.User
@@ -11,5 +15,6 @@ func NewUserService(u repository.User) *UserService {
 }
 
 func (u *UserService) Get(id int) {
-	u.userRepo.Get(id)
+	user := u.userRepo.Get(id)
+	fmt.Println(user.Status)
 }
