@@ -9,8 +9,8 @@ import (
 )
 
 func main() {
-	config := application.LoadConfig("dev")
-	fmt.Println("port: ", config.Web.Port)
+	app := application.Bootstrap("dev")
+	fmt.Println("port: ", app.Config.Web.Port)
 	repo := registory.NewUserRepository()
 	controller := controller.NewUser(repo)
 	controller.Get(1)
