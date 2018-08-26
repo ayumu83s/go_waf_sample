@@ -14,7 +14,7 @@ func (u *User) Get(id int) *entity.User {
 	return &entity.User{
 		ID:     id,
 		Name:   "aaa",
-		Age:    20,
+		Age:    19,
 		Status: true,
 	}
 }

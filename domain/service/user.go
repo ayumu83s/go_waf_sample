@@ -16,5 +16,5 @@ func NewUserService(u repository.User) *UserService {
 
 func (u *UserService) Get(id int) {
 	user := u.userRepo.Get(id)
-	fmt.Println(user.Status)
+	fmt.Println(user.IsAdult())
 }
