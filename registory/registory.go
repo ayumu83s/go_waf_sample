@@ -5,7 +5,7 @@ package registory
 
 import (
 	"github.com/ayumu83s/di_sample/domain/repository"
-	"github.com/ayumu83s/di_sample/infra"
+	"github.com/ayumu83s/di_sample/infra/database"
 )
 
 type Repository interface {
@@ -20,5 +20,5 @@ func NewRepository() Repository {
 }
 
 func (r *repositoryImpl) NewUser() repository.User {
-	return &infra.User{}
+	return &database.User{}
 }
