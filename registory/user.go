@@ -1,8 +1,8 @@
 package registory
 
 import (
+	"github.com/ayumu83s/di_sample/domain/repository"
 	"github.com/ayumu83s/di_sample/infra"
-	"github.com/ayumu83s/di_sample/repository"
 )
 
 type Repository interface {

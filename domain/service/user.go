@@ -1,6 +1,6 @@
 package service
 
-import "github.com/ayumu83s/di_sample/repository"
+import "github.com/ayumu83s/di_sample/domain/repository"
 
 type UserService struct {
 	userRepo repository.User
