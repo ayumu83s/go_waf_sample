@@ -1,5 +1,8 @@
 package registory
 
+// 簡易なDIコンテナ
+// リポジトリの実装を返す
+
 import (
 	"github.com/ayumu83s/di_sample/domain/repository"
 	"github.com/ayumu83s/di_sample/infra"
