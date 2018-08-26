@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	config := application.LoadConfig("config/dev.toml")
+	config := application.LoadConfig("dev")
 	fmt.Println("port: ", config.Web.Port)
 	repo := registory.NewUserRepository()
 	controller := controller.NewUser(repo)
