@@ -7,11 +7,20 @@ import (
 )
 
 type Config struct {
-	Web WebConfig
+	Web   WebConfig
+	Mysql MysqlConfig
 }
 
 type WebConfig struct {
 	Port int
+}
+
+type MysqlConfig struct {
+	Host     string
+	Port     int
+	User     string
+	Password string
+	Database string
 }
 
 func configPath(env string) string {
