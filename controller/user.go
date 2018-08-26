@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/ayumu83s/di_sample/domain/service"
-	"github.com/ayumu83s/di_sample/registory"
+	"github.com/ayumu83s/go_waf_sample/domain/service"
+	"github.com/ayumu83s/go_waf_sample/registory"
 )
 
 type User struct {

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ayumu83s/di_sample/application"
-	"github.com/ayumu83s/di_sample/controller"
-	"github.com/ayumu83s/di_sample/registory"
+	"github.com/ayumu83s/go_waf_sample/application"
+	"github.com/ayumu83s/go_waf_sample/controller"
+	"github.com/ayumu83s/go_waf_sample/registory"
 )
 
 func main() {

@@ -4,9 +4,9 @@ package registory
 // リポジトリの実装を返す
 
 import (
-	"github.com/ayumu83s/di_sample/domain/repository"
-	"github.com/ayumu83s/di_sample/infra/database"
-	"github.com/ayumu83s/di_sample/infra/memcache"
+	"github.com/ayumu83s/go_waf_sample/domain/repository"
+	"github.com/ayumu83s/go_waf_sample/infra/database"
+	"github.com/ayumu83s/go_waf_sample/infra/memcache"
 )
 
 type UserRepository interface {

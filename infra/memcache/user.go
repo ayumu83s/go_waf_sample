@@ -3,7 +3,7 @@ package memcache
 import (
 	"fmt"
 
-	"github.com/ayumu83s/di_sample/domain/entity"
+	"github.com/ayumu83s/go_waf_sample/domain/entity"
 )
 
 type User struct {

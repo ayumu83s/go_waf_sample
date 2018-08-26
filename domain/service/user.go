@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 
-	"github.com/ayumu83s/di_sample/domain/repository"
+	"github.com/ayumu83s/go_waf_sample/domain/repository"
 )
 
 type UserService struct {

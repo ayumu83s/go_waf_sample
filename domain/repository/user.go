@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/ayumu83s/di_sample/domain/entity"
+import "github.com/ayumu83s/go_waf_sample/domain/entity"
 
 // CRUDに関するI/Fを定義
 

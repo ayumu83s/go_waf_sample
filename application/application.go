@@ -7,11 +7,18 @@ type Application struct {
 	DB     *sql.DB
 }
 
+var app *Application
+
 func Bootstrap(env string) *Application {
 	config := LoadConfig(env)
 	db := SetupDB(config)
-	return &Application{
+	app = &Application{
 		Config: config,
 		DB:     db,
 	}
+	return app
+}
+
+func App() *Application {
+	return app
 }
