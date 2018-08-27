@@ -25,3 +25,9 @@ func (u *User) Create(name string, age int) {
 	userService := service.NewUserService(repo)
 	userService.Create(name, age)
 }
+
+func (u *User) Delete(id int) {
+	repo := u.repo.NewUser()
+	userService := service.NewUserService(repo)
+	userService.Delete(id)
+}

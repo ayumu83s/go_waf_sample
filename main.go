@@ -22,4 +22,5 @@ func main() {
 	controller.Get(1)
 
 	//controller.Create("EEE", 60)
+	controller.Delete(8)
 }

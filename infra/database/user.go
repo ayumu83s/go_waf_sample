@@ -47,3 +47,20 @@ func (u *User) Create(user *entity.User) (*entity.User, error) {
 	fmt.Println("lastInsertId: ", user.ID)
 	return user, nil
 }
+
+func (u *User) Delete(id int) (int64, error) {
+	res, err := u.DB.Exec("DELETE FROM user WHERE id = ?", id)
+	if err != nil {
+		fmt.Print(err)
+		return 0, err
+	}
+
+	deleted, err := res.RowsAffected()
+	if err != nil {
+		fmt.Print(err)
+		return 0, err
+	}
+
+	fmt.Println("deleted: ", deleted)
+	return deleted, nil
+}

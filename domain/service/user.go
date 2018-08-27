@@ -35,3 +35,7 @@ func (u *UserService) Create(name string, age int) {
 	fmt.Println(user.ID)
 	fmt.Println(user.IsAdult())
 }
+
+func (u *UserService) Delete(id int) {
+	u.userRepo.Delete(id)
+}
