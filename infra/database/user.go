@@ -11,7 +11,7 @@ type User struct {
 	DB *sql.DB
 }
 
-func (u *User) Get(id int) *entity.User {
+func (u *User) FindOneById(id int) *entity.User {
 	row := u.DB.QueryRow("SELECT * FROM user WHERE id = ?", id)
 
 	var user entity.User

@@ -9,7 +9,7 @@ import (
 type User struct {
 }
 
-func (u *User) Get(id int) *entity.User {
+func (u *User) FindOneById(id int) *entity.User {
 	fmt.Println("memcache/Get()")
 	return &entity.User{
 		ID:     id,
