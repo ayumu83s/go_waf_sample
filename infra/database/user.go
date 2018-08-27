@@ -13,10 +13,19 @@ type User struct {
 
 func (u *User) Get(id int) *entity.User {
 	fmt.Println("database/Get()")
-	return &entity.User{
-		ID:     id,
-		Name:   "aaa",
-		Age:    30,
-		Status: false,
+
+	row := u.DB.QueryRow("SELECT * FROM user WHERE id = ?", id)
+
+	var user entity.User
+	err := row.Scan(
+		&user.ID,
+		&user.Name,
+		&user.Age,
+		&user.Status,
+	)
+	if err != nil {
+		// not found
+		return nil
 	}
+	return &user
 }

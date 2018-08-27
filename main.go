@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"github.com/ayumu83s/go_waf_sample/application"
 	"github.com/ayumu83s/go_waf_sample/controller"
@@ -13,15 +12,14 @@ func main() {
 	app := application.Bootstrap("dev")
 	fmt.Println("port: ", app.Config.Web.Port)
 
-	var name string
-	if err := app.DB.QueryRow("SELECT name FROM user WHERE id = ?", 1).Scan(&name); err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println("name: ", name)
-
 	defer app.DB.Close() // これをCloseするのはどこが正解なのか・・
 
-	repo := registory.NewUserRepository()
+	repoArgs := &registory.RepositoryInput{
+		DB: app.DB,
+	}
+	repo := registory.NewUserRepository(repoArgs)
 	controller := controller.NewUser(repo)
 	controller.Get(1)
+	controller.Get(2)
+	controller.Get(99)
 }
