@@ -9,14 +9,14 @@ import (
 type User struct {
 }
 
-func (u *User) FindOneById(id int) *entity.User {
+func (u *User) FindOneById(id int) (entity.User, error) {
 	fmt.Println("memcache/Get()")
-	return &entity.User{
+	return entity.User{
 		ID:     id,
 		Name:   "aaa",
 		Age:    19,
 		Status: true,
-	}
+	}, nil
 }
 
 // 定義しないとコンパイルエラー

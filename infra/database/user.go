@@ -11,7 +11,7 @@ type User struct {
 	DB *sql.DB
 }
 
-func (u *User) FindOneById(id int) *entity.User {
+func (u *User) FindOneById(id int) (entity.User, error) {
 	row := u.DB.QueryRow("SELECT * FROM user WHERE id = ?", id)
 
 	var user entity.User
@@ -22,10 +22,12 @@ func (u *User) FindOneById(id int) *entity.User {
 		&user.Status,
 	)
 	if err != nil {
-		// not found
-		return nil
+		// sql: no rows in result set
+		// DBのerrorを直接返すと、他のmiddlewareと差し替えたときに
+		// I/Fが合わなくなるのでエラーをラップする
+		return user, fmt.Errorf("Not found: %d", id)
 	}
-	return &user
+	return user, nil
 }
 
 func (u *User) Create(user *entity.User) (*entity.User, error) {

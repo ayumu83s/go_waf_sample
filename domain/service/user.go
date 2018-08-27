@@ -16,9 +16,11 @@ func NewUserService(u repository.User) *UserService {
 }
 
 func (u *UserService) Get(id int) {
-	user := u.userRepo.FindOneById(id)
-	if user != nil {
+	user, err := u.userRepo.FindOneById(id)
+	if err == nil {
 		fmt.Println(user.IsAdult())
+	} else {
+		fmt.Println(err)
 	}
 }
 
