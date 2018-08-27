@@ -3,6 +3,7 @@ package service
 import (
 	"fmt"
 
+	"github.com/ayumu83s/go_waf_sample/domain/entity"
 	"github.com/ayumu83s/go_waf_sample/domain/repository"
 )
 
@@ -19,4 +20,18 @@ func (u *UserService) Get(id int) {
 	if user != nil {
 		fmt.Println(user.IsAdult())
 	}
+}
+
+func (u *UserService) Create(name string, age int) {
+	input := &entity.User{
+		Name:   name,
+		Age:    age,
+		Status: true,
+	}
+	user, err := u.userRepo.Create(input)
+	if err != nil {
+		return
+	}
+	fmt.Println(user.ID)
+	fmt.Println(user.IsAdult())
 }

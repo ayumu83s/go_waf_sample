@@ -18,3 +18,6 @@ func (u *User) Get(id int) *entity.User {
 		Status: true,
 	}
 }
+
+// 定義しないとコンパイルエラー
+func (u *User) Create(*entity.User) (*entity.User, error) { return nil, nil }

@@ -19,3 +19,9 @@ func (u *User) Get(id int) {
 	userService := service.NewUserService(repo)
 	userService.Get(id)
 }
+
+func (u *User) Create(name string, age int) {
+	repo := u.repo.NewUser()
+	userService := service.NewUserService(repo)
+	userService.Create(name, age)
+}

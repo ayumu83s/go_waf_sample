@@ -20,6 +20,6 @@ func main() {
 	repo := registory.NewUserRepository(repoArgs)
 	controller := controller.NewUser(repo)
 	controller.Get(1)
-	controller.Get(2)
-	controller.Get(99)
+
+	//controller.Create("EEE", 60)
 }
