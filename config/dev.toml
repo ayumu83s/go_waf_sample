@@ -8,3 +8,7 @@ user = "root"
 password = ""
 database = "go_waf_sample"
 
+[Redis]
+host = "127.0.0.1"
+port = 6379
+

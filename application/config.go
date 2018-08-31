@@ -9,6 +9,7 @@ import (
 type Config struct {
 	Web   WebConfig
 	Mysql MysqlConfig
+	Redis RedisConfig
 }
 
 type WebConfig struct {
@@ -21,6 +22,11 @@ type MysqlConfig struct {
 	User     string
 	Password string
 	Database string
+}
+
+type RedisConfig struct {
+	Host     string
+	Port     int
 }
 
 func configPath(env string) string {
